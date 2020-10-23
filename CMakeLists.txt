@@ -11,7 +11,6 @@ if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 else()
     message(WARNING "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first")
 endif()
-conan_basic_setup()
 
 if(MSVC_VERSION GREATER_EQUAL "1900")
   include(CheckCXXCompilerFlag)
