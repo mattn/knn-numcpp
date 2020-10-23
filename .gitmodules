@@ -1,4 +1,3 @@
 [submodule "NumCpp"]
 	path = NumCpp
 	url = https://github.com/dpilger26/NumCpp
-

@@ -5,6 +5,9 @@ project (knn-numcpp
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+
 if(MSVC_VERSION GREATER_EQUAL "1900")
   include(CheckCXXCompilerFlag)
   CHECK_CXX_COMPILER_FLAG("/std:c++latest" _cpp_latest_flag_supported)
