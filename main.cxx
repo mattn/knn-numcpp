@@ -13,7 +13,7 @@ typedef struct {
 static float
 distance(nc::NdArray<float> lhs, nc::NdArray<float> rhs) {
   float val = 0;
-  for (size_t i = 0; i < lhs.size(); i++)
+  for (uint32_t i = 0; i < lhs.size(); i++)
     val += pow(lhs[i]-rhs[i], 2);
   return sqrt(val);
 }
@@ -71,8 +71,8 @@ predict(KNN& knn, nc::NdArray<float>& X) {
 
 
 static std::vector<std::string>
-split(std::string& fname, char delimiter) {
-  std::istringstream f(fname);
+split(std::string& filename, char delimiter) {
+  std::istringstream f(filename);
   std::string field;
   std::vector<std::string> result;
   while (getline(f, field, delimiter)) {
@@ -103,9 +103,9 @@ main() {
   }
   ifs.close();
 
-  // make vector 4 dimentioned
+  // make vector 4 dimensions
   nc::NdArray<float> X(rows);
-  X.reshape(rows.size()/4, 4);
+  X.reshape((uint32_t) rows.size()/4, 4);
 
   // make factor from input values
   KNN knn = {
