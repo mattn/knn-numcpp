@@ -9,7 +9,7 @@ if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
     include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
     conan_basic_setup()
 else()
-    message(WARNING "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first")
+    message(WARNING "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first in ${CMAKE_BINARY_DIR}")
 endif()
 
 if(MSVC_VERSION GREATER_EQUAL "1900")
