@@ -1,7 +1,6 @@
 cmake_minimum_required (VERSION 3.10)
 
-project (knn-numcpp
-         LANGUAGES CXX C)
+project (knn-numcpp LANGUAGES CXX C)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
@@ -33,7 +32,10 @@ elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long")
 endif()
 
+find_package(Boost COMPONENTS)
 find_package(Threads REQUIRED)
+
+include_directories (${Boost_INCLUDE_DIRS})
 
 set (t_ knn-numcpp-settings)
     add_library (${t_} INTERFACE)
