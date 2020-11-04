@@ -109,7 +109,7 @@ main() {
 
   // make factor from input values
   KNN knn = {
-    .k = 8,
+    .k = 10,
     .XX = X,
     .Y = names,
   };
